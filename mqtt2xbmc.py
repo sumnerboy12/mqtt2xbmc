@@ -88,9 +88,9 @@ def notify_xbmc(xbmchost, title, message):
   
 def on_connect(mosq, userdata, result_code):
     logging.debug("Connected to MQTT broker, subscribing to topics...")
-    for topic in conf['topichost'].keys():
-        logging.debug("Subscribing to %s" % topic)
-        mqttc.subscribe(topic, 0)
+    for sub in conf['topichost'].keys():
+        logging.debug("Subscribing to %s" % sub)
+        mqttc.subscribe(sub, 0)
 
 def on_message(mosq, userdata, msg):
     """
@@ -100,11 +100,22 @@ def on_message(mosq, userdata, msg):
     payload = str(msg.payload)
     logging.debug("Message received on %s: %s" % (topic, payload))
 
-    hosts = conf['topichost'][topic]
-    title = conf['topictitle'][topic]
+    hosts = None
+    title = "Notification"
+    
+    # Try to find matching settings for this topic
+    for sub in conf['topichost'].keys():
+        if paho.topic_matches_sub(sub, topic):
+            hosts = conf['topichost'][sub]
+            break
+
+    for sub in conf['topictitle'].keys():
+        if paho.topic_matches_sub(sub, topic):
+            title = conf['topictitle'][sub]
+            break
 
     for host in hosts:
-        logging.debug("Sending notification to %s..." % host)
+        logging.debug("Sending XBMC notification to %s [%s]..." % (host, title))
         xbmchost = conf['xbmchost'][host]
         notify_xbmc(xbmchost, title, payload)
 
