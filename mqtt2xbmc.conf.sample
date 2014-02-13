@@ -1,6 +1,5 @@
 # Logging
 import logging
-logfile  = 'mqtt2xbmc.log'
 loglevel = logging.DEBUG
 logformat = '%(asctime)-15s %(message)s'
 
@@ -9,7 +8,7 @@ broker = 'localhost'
 port = 1883
 username = None
 password = None
-lwt = 'lwt/mqtt2xbmc'
+lwt = None
 
 # XBMC hosts
 xbmchost = {
