@@ -2,7 +2,7 @@
 
 This program subscribes to any number of MQTT topics (including wildcards) and publishes received payloads to [XBMC](http://xbmc.org/) as onscreen notification.
 
-You associate topic branches to XBMC hosts (<ipaddress>:<port>) in the configuration file (copy `mqtt2xbmc.conf.sample` to `mqtt2xbmc.conf` for use). 
+You associate topic branches to XBMC hosts in the configuration file (copy `mqtt2xbmc.conf.sample` to `mqtt2xbmc.conf` for use). 
 
 See details in the config sample for how to configure this script.
 
