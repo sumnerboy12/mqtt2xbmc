@@ -5,6 +5,7 @@ import urllib
 import urllib2
 import paho.mqtt.client as paho   # pip install paho-mqtt
 import logging
+import os
 import signal
 import sys
 import time
