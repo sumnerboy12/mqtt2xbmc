@@ -14,11 +14,12 @@ __copyright__ = 'Copyright 2014 Ben Jones'
 __license__   = """Eclipse Public License - v 1.0 (http://www.eclipse.org/legal/epl-v10.html)"""
 
 # load configuration
+configfile = os.getenv("MQTT2XBMCCONF", "/etc/mqtt2xbmc/mqtt2xbmc.conf")
 conf = {}
 try:
-    execfile('/etc/mqtt2xbmc/mqtt2xbmc.conf', conf)
+    execfile(configfile, conf)
 except Exception, e:
-    print "Cannot load /etc/mqtt2xbmc/mqtt2xbmc.conf: %s" % str(e)
+    print "Cannot load %s: %s" % (configfile, str(e))
     sys.exit(2)
 
 LOGFILE = conf['logfile']
