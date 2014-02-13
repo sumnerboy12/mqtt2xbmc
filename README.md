@@ -14,13 +14,11 @@ See details in the config sample for how to configure this script.
 
 ## Installation
 
-mkdir /etc/mqtt2xbmc/
-git clone git://github.com/sumnerboy12/mqtt2xbmc.git /usr/local/mqtt2xbmc/
-cp /usr/local/mqtt2xbmc/mqtt2xbmc.conf.sample /etc/mqtt2xbmc/mqtt2xbmc.conf
-cp /usr/local/mqtt2xbmc/mqtt2xbmc.init /etc/init.d/mqtt2xbmc
-update-rc.d mqtt2xbmc defaults
-cp /usr/local/mqtt2xbmc/mqtt2xbmc.default /etc/default/mqtt2xbmc
-
+* `mkdir /etc/mqtt2xbmc/`
+* `git clone git://github.com/sumnerboy12/mqtt2xbmc.git /usr/local/mqtt2xbmc/`
+* `cp /usr/local/mqtt2xbmc/mqtt2xbmc.conf.sample /etc/mqtt2xbmc/mqtt2xbmc.conf`
+* `cp /usr/local/mqtt2xbmc/mqtt2xbmc.init /etc/init.d/mqtt2xbmc`
+* `update-rc.d mqtt2xbmc defaults`
+* `cp /usr/local/mqtt2xbmc/mqtt2xbmc.default /etc/default/mqtt2xbmc`
 * Edit /etc/default/mqtt2xbmc and /etc/mqtt2xbmc/mqtt2xbmc.conf to suit
-
-/etc/init.d/mqtt2xbmc start
+* `/etc/init.d/mqtt2xbmc start`
