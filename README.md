@@ -21,4 +21,6 @@ See details in the config sample for how to configure this script.
 * `update-rc.d mqtt2xbmc defaults`
 * `cp /usr/local/mqtt2xbmc/mqtt2xbmc.default /etc/default/mqtt2xbmc`
 * Edit /etc/default/mqtt2xbmc and /etc/mqtt2xbmc/mqtt2xbmc.conf to suit
+* `chmod a+x /usr/local/mqtt2xbmc/mqtt2xbmc.py`
+* `chmod a+x /etc/init.d/mqtt2xbmc`
 * `/etc/init.d/mqtt2xbmc start`
