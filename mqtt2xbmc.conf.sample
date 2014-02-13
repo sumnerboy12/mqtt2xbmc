@@ -1,0 +1,33 @@
+# Logging
+logfile  = 'mqtt2xbmc.log'
+loglevel = 'DEBUG'
+logformat = '%(asctime)-15s %(message)s'
+
+# MQTT Broker
+broker = 'localhost'
+port = 1883
+username = None
+password = None
+lwt = 'lwt/mqtt2xbmc'
+
+# XBMC hosts
+xbmchost = {
+    'host1' : '192.168.1.40:8080',
+    'host2' : '192.168.1.41:8080'
+}
+
+# MQTT topic -> XBMC host
+topichost = {
+    'notification/info'   : ['host1'],
+    'notification/warn'   : ['host2'],
+    'notification/error'  : ['host1', 'host2']
+}
+
+# MQTT topic -> notification title
+topictitle = {
+    'notification/info'   : 'Info',
+    'notification/warn'   : 'Warning',
+    'notification/error'  : 'Error'
+}
+
+
