@@ -16,9 +16,9 @@ __license__   = """Eclipse Public License - v 1.0 (http://www.eclipse.org/legal/
 # load configuration
 conf = {}
 try:
-    execfile('mqtt2xbmc.conf', conf)
+    execfile('/etc/mqtt2xbmc/mqtt2xbmc.conf', conf)
 except Exception, e:
-    print "Cannot load mqtt2xbmc.conf: %s" % str(e)
+    print "Cannot load /etc/mqtt2xbmc/mqtt2xbmc.conf: %s" % str(e)
     sys.exit(2)
 
 LOGFILE = conf['logfile']
